@@ -1,2 +1,2 @@
-// JavaScript File
-console.log("Linked");
+//JS
+console.log("Linked")
