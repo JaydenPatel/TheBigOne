@@ -1,0 +1,87 @@
+body {
+    height: 1vh;
+    background: white;
+    background: radial-gradient(circle, #fff 1%, #a6a6a6);
+    background-size: cover;
+}
+
+#gameBox {
+    width: 600px;
+    height: 600px;
+    background-color: gray;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu {
+    background-color: white;
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
+.levelOptionsUnSelectable {
+    pointer-events: none;
+    text-decoration: none;
+    color: black;
+}
+
+.levelOptions {
+    text-decoration: none;
+    color: black;
+}
+#startScreen {
+    background-color: black;
+    color: white;
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#startOptions {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+#newGame {
+    font-family: "Permanent Marker";
+    font-size: 40px;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: #87CEFA;
+    border-radius: 4px;
+    margin: 50px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+#loadGame {
+    font-family: "Permanent Marker";
+    font-size: 40px;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    
+}
