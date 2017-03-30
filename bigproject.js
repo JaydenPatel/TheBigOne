@@ -5,31 +5,37 @@ var theCurrentLevel = "The current level is: ";
 var playerX;
 var spawnPoint;
 var level;
-var selectLevel;
 var currentLevel;
 var startLevel;
+var localStorage;
+
+
+
 var newGameButton = document.getElementById("newGame");
-newGameButton.addEventListener("click", reset);
 var loadGameButton = document.getElementById("loadGame");
-loadGameButton.addEventListener("click", loadGame);
+var startOptions = document.getElementById('startOptions');
+
+
+
 var levelSelectOne = document.getElementById("levelSelectOne");
 var levelSelectTwo = document.getElementById("levelSelectTwo");
 var levelSelectThree = document.getElementById("levelSelectThree");
+
+
 var screen = document.getElementById("startScreen");
 var menu = document.getElementById("menu");
+var startScreen = document.getElementById("startScreen");
 
-var firstLevel = document.getElementById("firstLevel");
 
-levelSelectOne.addEventListener("click", levelOne);
+loadGameButton.addEventListener("click", loadGame);
+newGameButton.addEventListener("click", reset);
+levelSelectThree.addEventListener("click", selectLevelThree);
+levelSelectTwo.addEventListener("click", selectLevelTwo);
+levelSelectOne.addEventListener("click", selectLevelOne);
 
-function levelOne() {
-    firstLevel.className = "show";
-    menu.className = "hide";
-    console.log("level one test");
-    alert("test leve one");
-}
-// img.addEventListener("click", startScreen)
-console.log("The current cache level is: " + localStorage.levelNumber)
+
+
+console.log("The current cache level is: " + localStorage.levelNumber);
 
 
 function load() {
@@ -56,16 +62,17 @@ function loadGame() {
 }
 
 function levelOne() {
-
-
     currentLevel = 1;
     save();
     console.log(theCurrentLevel + currentLevel);
     levelSelectOne.className = "levelOptions";
+    startScreen.innerHTML = "<img src='./images/level1Background.jpg' />";
+    startOptions.className = "hide";
+//  = "<img src='./images/lock2.jpg'/>";
+
 }
 
 function levelTwo() {
-
 
 
     currentLevel = 2;
@@ -73,6 +80,7 @@ function levelTwo() {
     console.log(theCurrentLevel + currentLevel);
     levelSelectOne.className = "levelOptions";
     levelSelectTwo.className = "levelOptions";
+    startOptions.className = "hide";
 }
 
 function levelThree() {
@@ -85,6 +93,7 @@ function levelThree() {
     levelSelectOne.className = "levelOptions";
     levelSelectTwo.className = "levelOptions";
     levelSelectThree.className = "levelOptions";
+    startOptions.className = "hide";
 }
 
 function finish() {
@@ -106,10 +115,23 @@ function save() {
 
 
 function reset() {
-    localStorage.levelNumber = 1
-        // window.open("index.html");
-    console.log(localStorage.levelNumber);
+    localStorage.levelNumber = 1;
+    // window.open("index.html");
+    console.log("Reset to " + localStorage.levelNumber);
     load();
     loadGame();
 }
 //localStorage.levelNumber = 2
+
+
+function selectLevelOne() {
+    levelOne();
+}
+
+function selectLevelTwo() {
+    levelTwo();
+}
+
+function selectLevelThree() {
+    levelThree();
+}

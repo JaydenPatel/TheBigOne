@@ -1,10 +1,10 @@
 #html {
-    /*-webkit-touch-callout: none;*/
-    /*-webkit-user-select: none;*/
-    /*-khtml-user-select: none;*/
-    /*-moz-user-select: none;*/
-    /*-ms-user-select: none;*/
-    /*user-select: none;*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -29,9 +29,10 @@ body {
 }
 
 #menu {
+    color: white;
     font-family: "Permanent Marker";
     font-size: 30px;
-    background-color: white;
+    background-color: black;
     width: 550px;
     height: 550px;
     position: absolute;
@@ -39,6 +40,7 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    opacity: .75;
 }
 
 #menuText {
@@ -58,15 +60,24 @@ body {
     display: inline;
 }
 
-.levelOptionsUnSelectable {
-    pointer-events: none;
-    text-decoration: none;
-    color: black;
-}
+
+/*.levelOptionsUnSelectable {*/
+
+
+/*    pointer-events: none;*/
+
+
+/*    text-decoration: none;*/
+
+
+/*    color: black;*/
+
+
+/*}*/
 
 .levelOptions {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #startScreen {
@@ -127,6 +138,19 @@ body {
 #save {
     font-size: 30px;
 }
-#firstLevel {
-    background: url(./Images/level1Background.jpg);
+
+#levelOne {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#levelSelectTwo {
+    font-size: 29px;
+}
+
+#photo {
+    position: absolute;
 }
