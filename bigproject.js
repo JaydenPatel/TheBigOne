@@ -97,5 +97,7 @@ function reset() {
     localStorage.levelNumber = 1
         // window.open("index.html");
     console.log(localStorage.levelNumber);
+    load();
+    loadGame();
 }
 //localStorage.levelNumber = 2
