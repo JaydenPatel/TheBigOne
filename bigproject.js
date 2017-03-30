@@ -66,9 +66,9 @@ function levelOne() {
     save();
     console.log(theCurrentLevel + currentLevel);
     levelSelectOne.className = "levelOptions";
-    startScreen.innerHTML = "<img src='./images/level1Background.jpg' />";
+    startScreen.innerHTML = "<img class='photo' src='./images/lock2.jpg' />";
+    startScreen.innerHTML += "<img  class='backgroundIMG' src='./images/level1Background.jpg' />";
     startOptions.className = "hide";
-//  = "<img src='./images/lock2.jpg'/>";
 
 }
 
