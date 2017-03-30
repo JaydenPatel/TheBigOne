@@ -1,15 +1,20 @@
 //JavaScript
 console.log("Linked");
 
-var playerX = document.getElementById("");
-var spawnPoint = document.getElementById("");
-
+var playerX;
+var spawnPoint;
 var level;
 var selectLevel;
 var currentLevel;
 var startLevel;
+var newGame = document.getElementById("newGame");
+newGame.addEventListener("click", reset)
+var levelSelectOne = document.getElementById("levelSelectOne");
+var levelSelectTwo = document.getElementById("levelSelectTwo");
+var levelSelectThree = document.getElementById("levelSelectThree");
 
 // img.addEventListener("click", startScreen)
+console.log(localStorage.levelNumber)
 
 function startScreen() {
     load();
@@ -46,6 +51,7 @@ function levelOne() {
     currentLevel = 1;
     save();
     console.log(currentLevel);
+    levelSelectOne.className = "levelOptions"
 }
 
 function levelTwo() {
@@ -55,6 +61,8 @@ function levelTwo() {
     currentLevel = 2;
     save();
     console.log(currentLevel);
+    levelSelectOne.className = "levelOptions";
+    levelSelectTwo.className = "levelOptions"
 }
 
 function levelThree() {
@@ -64,6 +72,9 @@ function levelThree() {
     currentLevel = 3;
     save();
     console.log(currentLevel);
+    levelSelectOne.className = "levelOptions"
+    levelSelectTwo.className = "levelOptions"
+    levelSelectThree.className = "levelOptions"
 }
 
 function finish() {
@@ -72,6 +83,9 @@ function finish() {
     currentLevel = 1;
     save();
     console.log(currentLevel);
+    levelSelectOne.className = "levelOptions"
+    levelSelectTwo.className = "levelOptions"
+    levelSelectThree.className = "levelOptions"
 }
 
 
@@ -80,7 +94,10 @@ function save() {
     localStorage.setItem("levelNumber", currentLevel);
 }
 
+
 function reset() {
     localStorage.levelNumber = 1
-    window.open("index.html");
+        // window.open("index.html");
+    console.log(localStorage.levelNumber);
 }
+//localStorage.levelNumber = 2

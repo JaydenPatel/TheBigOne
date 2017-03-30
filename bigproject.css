@@ -8,7 +8,7 @@ body {
 #gameBox {
     width: 600px;
     height: 600px;
-    background-color: gray;
+    background-color: #696969;
     border-radius: 4px;
     text-align: center;
     margin: 0;
@@ -20,9 +20,19 @@ body {
 }
 
 #menu {
+    font-family: "Permanent Marker";
+    font-size: 30px;
     background-color: white;
     width: 550px;
     height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#menuText {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -48,6 +58,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
 #startScreen {
     background-color: black;
     color: white;
@@ -59,29 +70,50 @@ body {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
+
 #startOptions {
     position: relative;
-    top: 50%;
-    text-align: center;
-    vertical-align: middle;
+    top: 175px;
 }
+
 #newGame {
     font-family: "Permanent Marker";
+    border-radius: 3px;
     font-size: 40px;
     position: relative;
     width: 100px;
     height: 50px;
-    background-color: #87CEFA;
-    border-radius: 4px;
-    margin: 50px;
     padding: 10px 10px 10px 10px;
     text-align: center;
+    padding-right: 65px;
+    padding-left: 65px;
 }
+
+#newGame:hover {
+    background-color: #778899;
+    border-radius: 4px;
+    margin: 50px;
+}
+
 #loadGame {
     font-family: "Permanent Marker";
     font-size: 40px;
+    border-radius: 3px;
     position: relative;
     width: 100px;
     height: 50px;
-    
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    padding-right: 65px;
+    padding-left: 65px;
+}
+
+#loadGame:hover {
+    background-color: #778899;
+    border-radius: 4px;
+    margin: 50px;
+}
+
+#save {
+    font-size: 30px;
 }
