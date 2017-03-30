@@ -80,8 +80,14 @@ body {
     color: white;
 }
 
+.mainpageIMG {
+    opacity: .5;
+    z-index: 40;
+}
+
 #startScreen {
     background-color: black;
+    border-radius: 4px;
     color: white;
     width: 550px;
     height: 550px;
@@ -90,6 +96,19 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+#startScreen:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(http://www.zingerbug.com/Backgrounds/background_images/teal_maze_on_black_background_seamless.jpg);
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
 }
 
 #startOptions {
@@ -151,12 +170,29 @@ body {
     font-size: 29px;
 }
 
-.photo {
+.backgroundLevelOne {
     margin: 0;
     position: absolute;
     top: 50%;
+    left: 48%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 3.5em;
+}
+
+.keyLevelOne {
+    position: absolute;
+}
+
+#levelsSpan {
+    margin: 0;
+    padding: 0;
+}
+
+#startTitle {
+    position: absolute;
+    top: -45%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    width: 5em;
 }

@@ -12,10 +12,11 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" />
 
     <div id="gameBox">
-        <div id="startScreen" class = "startScreenClass">
+        <div id="startScreen" class="startScreenClass">
             <center>
                 <div id="startOptions">
-                    
+                    <span class="mainpageIMG" src="http://www.zingerbug.com/Backgrounds/background_images/teal_maze_on_black_background_seamless.jpg" style="height: 550px; width: 550px;"></span>
+                    <span id="startTitle"><img src="./images/startTitle.png"/></span>
                     <span id="newGame">New Game</span>
                     <br>
                     <br>
@@ -27,7 +28,8 @@
         </div>
         <div id="menu" class="hide">
             <span id="menuText">
-            <h1>Levels:</h1>
+            <h1 id = "levelsTab">Levels:</h1>
+            <span id="levelsSpan" class="hide">
             <text></text>
             <span id="levelSelectOne">Level 1</span>
             <br>
@@ -38,6 +40,7 @@
             <span id="levelSelectThree" class="levelOptionsUnSelectable">Level 3</span>
             <br>
             <br>
+            </span>
             <a id="save">Save Game</a>
             <h4 id="restartLevel">Restart Level</h4>
             </span>
