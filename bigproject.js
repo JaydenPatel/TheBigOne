@@ -16,6 +16,18 @@ var levelSelectOne = document.getElementById("levelSelectOne");
 var levelSelectTwo = document.getElementById("levelSelectTwo");
 var levelSelectThree = document.getElementById("levelSelectThree");
 var screen = document.getElementById("startScreen");
+var menu = document.getElementById("menu");
+
+var firstLevel = document.getElementById("firstLevel");
+
+levelSelectOne.addEventListener("click", levelOne);
+
+function levelOne() {
+    firstLevel.className = "show";
+    menu.className = "hide";
+    console.log("level one test");
+    alert("test leve one");
+}
 // img.addEventListener("click", startScreen)
 console.log("The current cache level is: " + localStorage.levelNumber)
 
