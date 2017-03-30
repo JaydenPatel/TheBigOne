@@ -18,6 +18,7 @@ var restartLevelButton = document.getElementById("restartLevel");
 var saveButton = document.getElementById("save");
 var levelsTab = document.getElementById("levelsTab");
 var levelsSpan = document.getElementById("levelsSpan");
+var instructions = document.getElementById("instructions");
 
 var levelSelectOne = document.getElementById("levelSelectOne");
 var levelSelectTwo = document.getElementById("levelSelectTwo");
@@ -27,7 +28,7 @@ var levelSelectThree = document.getElementById("levelSelectThree");
 var menu = document.getElementById("menu");
 var startScreen = document.getElementById("startScreen");
 
-levelsTab.addEventListener("click" , showLevels)
+levelsTab.addEventListener("click", showLevels)
 loadGameButton.addEventListener("click", loadGame);
 newGameButton.addEventListener("click", reset);
 restartLevelButton.addEventListener("click", restartLevel);
@@ -68,11 +69,13 @@ function levelOne() {
     currentLevel = 1;
     save();
     console.log(theCurrentLevel + currentLevel);
+    startOptions.className = "hide";
+
     levelSelectOne.className = "levelOptions";
-    startScreen.innerHTML = "<img class='backgroundLevelOne' src='./images/lock1.png' />";
+    
+    startScreen.innerHTML= "<img class='backgroundLevelOne' src='./images/lock1.png' />";
     startScreen.innerHTML += "<img class='keyLevelOne' src='./images/lock1.png' />";
     startScreen.innerHTML += "<img class='backgroundIMG' src='./images/level1Background.jpg' />";
-    startOptions.className = "hide";
 
 }
 
@@ -161,6 +164,7 @@ function restartLevel() {
 }
 
 
-function showLevels(){
+function showLevels() {
     levelsSpan.className = "show";
+    instructions.className = "hide";
 }

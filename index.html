@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" />
 
     <div id="gameBox">
+    <div id="splash"></div>
         <div id="startScreen" class="startScreenClass">
             <center>
-                <div id="startOptions">
+                <div id="startOptions" class="startOptions">
                     <span class="mainpageIMG" src="http://www.zingerbug.com/Backgrounds/background_images/teal_maze_on_black_background_seamless.jpg" style="height: 550px; width: 550px;"></span>
                     <span id="startTitle"><img src="./images/startTitle.png"/></span>
                     <span id="newGame">New Game</span>
@@ -43,6 +44,13 @@
             </span>
             <a id="save">Save Game</a>
             <h4 id="restartLevel">Restart Level</h4>
+            <span style="position: relative; top: -35px;" id="instructions">
+            <div style="font-size: 17.5px; margin-left: 10px; margin-right: 10px;">To play the game, find the keys hidden in the map. Some maps you will have to find multiple keys to open the door. Once you have all the keys, click the lock. The lock will disappear. Click the door to get to the next level.</div>
+            <br>
+            <div style="font-size: 17.5px; margin-left: 10px; margin-right: 10px;"> Click save game to save your current progress. </div>
+            <br>
+            <div style="font-size: 17.5px; margin-left: 10px; margin-right: 10px; "> Click restart level to start the level over again.</div>
+
             </span>
         </div>
     </div>
