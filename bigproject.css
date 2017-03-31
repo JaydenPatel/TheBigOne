@@ -1,4 +1,4 @@
-#html {
+html {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -60,20 +60,9 @@ body {
     display: inline;
 }
 
-
-/*.levelOptionsUnSelectable {*/
-
-
-/*    pointer-events: none;*/
-
-
-/*    text-decoration: none;*/
-
-
-/*    color: black;*/
-
-
-/*}*/
+.levelOptionsUnSelectable {
+    pointer-events: none;
+}
 
 .levelOptions {
     text-decoration: none;
@@ -175,7 +164,6 @@ body {
     position: absolute;
     top: 50%;
     left: 48%;
-    margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 3.5em;
 }
@@ -214,12 +202,22 @@ body {
     color: white;
     font-family: "Permanent Marker";
     font-size: 30px;
-    width: 550px;
-    height: 550px;
+    width: 485px;
+    height: 210px;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
+    padding: 170px 32.5px 170px 32.5px;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }

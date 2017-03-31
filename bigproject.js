@@ -1,7 +1,11 @@
 //JavaScript
-console.log("Linked");
+//Displays your current level in the console
 var theCurrentLevel = "The current level is: ";
+setTimeout(function(){alert("Checkpoint:  Level:  " + localStorage.levelNumber)}, 3000);
+console.log("The current cache level is: " + localStorage.levelNumber);
 
+
+//Undefined Variable
 var playerX;
 var spawnPoint;
 var level;
@@ -10,37 +14,32 @@ var startLevel;
 var localStorage;
 
 
-
+//Start screen 
+var startScreen = document.getElementById("startScreen");
 var newGameButton = document.getElementById("newGame");
 var loadGameButton = document.getElementById("loadGame");
+//Event Listeners for Start screen
+loadGameButton.addEventListener("click", loadGame);
+newGameButton.addEventListener("click", reset);
+
+//Menu Options
+var menu = document.getElementById("menu");
 var startOptions = document.getElementById('startOptions');
 var restartLevelButton = document.getElementById("restartLevel");
 var saveButton = document.getElementById("save");
 var levelsTab = document.getElementById("levelsTab");
 var levelsSpan = document.getElementById("levelsSpan");
 var instructions = document.getElementById("instructions");
-
 var levelSelectOne = document.getElementById("levelSelectOne");
 var levelSelectTwo = document.getElementById("levelSelectTwo");
 var levelSelectThree = document.getElementById("levelSelectThree");
-
-
-var menu = document.getElementById("menu");
-var startScreen = document.getElementById("startScreen");
-
-levelsTab.addEventListener("click", showLevels)
-loadGameButton.addEventListener("click", loadGame);
-newGameButton.addEventListener("click", reset);
+//Event Listeners for Menu Options
 restartLevelButton.addEventListener("click", restartLevel);
 saveButton.addEventListener("click", save);
+levelsTab.addEventListener("click", showLevels)
 levelSelectThree.addEventListener("click", selectLevelThree);
 levelSelectTwo.addEventListener("click", selectLevelTwo);
 levelSelectOne.addEventListener("click", selectLevelOne);
-
-
-
-console.log("The current cache level is: " + localStorage.levelNumber);
-
 
 function load() {
     if (localStorage.levelNumber == undefined) {
@@ -66,7 +65,7 @@ function loadGame() {
 }
 
 function prelevelOne() {
-    startScreen.innerHTML = "<center><div id='prelevelOneDIV'>Can you escape Summit Shasta? To play, find the keys to open the locks. Then click the door to go to the next level</div></center>";
+    startScreen.innerHTML = "<center><div id='prelevelOneDIV'>Can you escape Summit Shasta?<br><br>To play, find the keys to open the locks. Then click the door to go to the next level</div></center>";
     var preloadDiv = document.getElementById("prelevelOneDIV");
     preloadDiv.addEventListener("click", function() {
         levelOne();
@@ -88,12 +87,19 @@ function levelOne() {
     var clickable = false;
     keyLevelOne.addEventListener("click", clickKey);
     backgroundIMG.addEventListener("click", clickScreen);
+    lockLevelOne.addEventListener("click", clickLock);
 
     function clickKey() {
-        console.log("Key Clicked");
-        lockLevelOne.className = "hide";
+        console.log("Key Obtained");
         keyLevelOne.className = "hide";
-        clickable = true;
+    }
+
+    function clickLock() {
+        if (keyLevelOne.className == "hide") {
+            lockLevelOne.className = "hide";
+            console.log("Lock opened");
+            clickable = true;
+        }
     }
 
     function clickScreen() {
@@ -131,16 +137,16 @@ function levelThree() {
     startScreen.innerHTML = "";
 }
 
-function finish() {
+// function finish() {
 
 
-    currentLevel = 1;
-    save();
-    console.log(theCurrentLevel + currentLevel);
-    levelSelectOne.className = "levelOptions";
-    levelSelectTwo.className = "levelOptions";
-    levelSelectThree.className = "levelOptions";
-}
+//     currentLevel = 1;
+//     save();
+//     console.log(theCurrentLevel + currentLevel);
+//     levelSelectOne.className = "levelOptions";
+//     levelSelectTwo.className = "levelOptions";
+//     levelSelectThree.className = "levelOptions";
+// }
 
 
 function reset() {
@@ -150,8 +156,6 @@ function reset() {
     load();
     loadGame();
 }
-//localStorage.levelNumber = 2
-
 
 function selectLevelOne() {
     levelOne();

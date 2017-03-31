@@ -15,15 +15,18 @@ $(document).on('buttonClick', function() {
 
 
 
+$("img").mousedown(function(){
+    return false;
+});
+
 
 
 
 // Splash animation
 $(document).ready(function() {
     $('#splash').css('opacity', '1'); // doing this with jQuery for ease
-
     // here are the basics, just like your existing code
     $("#splash").ready(function() {
-        $("#splash").fadeOut(2350); // you could also use $(this).fadeOut('slow');
+        $("#splash").fadeOut(3000); // you could also use $(this).fadeOut('slow');
     });
 });
