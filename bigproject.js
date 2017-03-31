@@ -61,21 +61,47 @@ function loadGame() {
         levelTwo();
     }
     else
-        levelOne();
+        prelevelOne();
 
+}
+
+function prelevelOne() {
+    startScreen.innerHTML = "<center><div id='prelevelOneDIV'>Can you escape Summit Shasta? To play, find the keys to open the locks. Then click the door to go to the next level</div></center>";
+    var preloadDiv = document.getElementById("prelevelOneDIV");
+    preloadDiv.addEventListener("click", function() {
+        levelOne();
+    });
 }
 
 function levelOne() {
     currentLevel = 1;
     save();
     console.log(theCurrentLevel + currentLevel);
-    startOptions.className = "hide";
-
     levelSelectOne.className = "levelOptions";
-    
-    startScreen.innerHTML= "<img class='backgroundLevelOne' src='./images/lock1.png' />";
-    startScreen.innerHTML += "<img class='keyLevelOne' src='./images/lock1.png' />";
-    startScreen.innerHTML += "<img class='backgroundIMG' src='./images/level1Background.jpg' />";
+    startScreen.innerHTML = "<img class='lockLevelOne' id='lockLevelOne' src='./images/lock1.png' />";
+    startScreen.innerHTML += "<img class='keyLevelOne' id='keyLevelOne' src='./images/levelOneKeyIMG.png' />";
+    startScreen.innerHTML += "<img class='backgroundIMG' id='backgroundIMG' src='./images/level1Background.jpg' />";
+    startOptions.className = "hide";
+    var lockLevelOne = document.getElementById("lockLevelOne");
+    var keyLevelOne = document.getElementById("keyLevelOne");
+    var backgroundIMG = document.getElementById("backgroundIMG");
+    var clickable = false;
+    keyLevelOne.addEventListener("click", clickKey);
+    backgroundIMG.addEventListener("click", clickScreen);
+
+    function clickKey() {
+        console.log("Key Clicked");
+        lockLevelOne.className = "hide";
+        keyLevelOne.className = "hide";
+        clickable = true;
+    }
+
+    function clickScreen() {
+        if (clickable == true) {
+            levelTwo();
+            console.log("Starting Level Two");
+        }
+    }
 
 }
 
