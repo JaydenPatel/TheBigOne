@@ -15,11 +15,10 @@ $(document).on('buttonClick', function() {
 
 
 
-$("img").mousedown(function(){
+//Prevents image interactions
+$("img").mousedown(function() {
     return false;
 });
-
-
 
 
 // Splash animation
@@ -30,3 +29,39 @@ $(document).ready(function() {
         $("#splash").fadeOut(3000); // you could also use $(this).fadeOut('slow');
     });
 });
+//Popup for New Game Button
+/* global newGameButton */
+/* global loadGameButton */
+/* global swal */
+/* global localStorage */
+newGameButton.addEventListener("click", newGamePopup);
+
+function newGamePopup() {
+    swal({
+        title: "Welcome to the game!",
+        imageUrl: "./images/mattHesby.png",
+        imageSize: "154.5x154.5",
+        timer: 3000,
+        allowEscapeKey: true,
+        showLoaderOnConfirm: true,
+    }, function() {;
+    });
+}
+//Popup for Load Game Button
+loadGameButton.addEventListener("click", loadGamePopup);
+
+function loadGamePopup() {
+setTimeout(function() {
+    swal({
+        title: "Checkpoint: Level " + localStorage.levelNumber,
+        text: "Welcome Back! - Matt Hesby",
+        imageUrl: "./images/mattHesby.png",
+        imageSize: "154.5x154.5",
+        timer: "3000",
+        allowEscapeKey: true,
+        showLoaderOnConfirm: true,
+    }, function() {;
+    });
+});
+}
+

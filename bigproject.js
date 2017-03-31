@@ -1,7 +1,6 @@
 //JavaScript
 //Displays your current level in the console
 var theCurrentLevel = "The current level is: ";
-setTimeout(function(){alert("Checkpoint:  Level:  " + localStorage.levelNumber)}, 3000);
 console.log("The current cache level is: " + localStorage.levelNumber);
 
 
@@ -70,6 +69,7 @@ function prelevelOne() {
     preloadDiv.addEventListener("click", function() {
         levelOne();
     });
+
 }
 
 function levelOne() {
