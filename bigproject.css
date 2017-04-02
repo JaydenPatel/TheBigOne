@@ -10,7 +10,7 @@ html {
 body {
     height: 1vh;
     background: white;
-    background: radial-gradient(circle, #fff 1%, #a6a6a6);
+    background: radial-gradient(circle, #fff 5%, #a6a6a6);
     background-size: cover;
 }
 
@@ -72,6 +72,15 @@ body {
 .mainpageIMG {
     opacity: .5;
     z-index: 40;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }
 
 #startScreen {
@@ -211,13 +220,4 @@ body {
     padding: 170px 32.5px 170px 32.5px;
     transform: translate(-50%, -50%);
     text-align: center;
-}
-
-img {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -webkit-touch-callout: none;
 }

@@ -84,7 +84,7 @@ function levelOne() {
     var lockLevelOne = document.getElementById("lockLevelOne");
     var keyLevelOne = document.getElementById("keyLevelOne");
     var backgroundIMG = document.getElementById("backgroundIMG");
-    var clickable = false;
+    var clickableOne = false;
     keyLevelOne.addEventListener("click", clickKey);
     backgroundIMG.addEventListener("click", clickScreen);
     lockLevelOne.addEventListener("click", clickLock);
@@ -98,12 +98,12 @@ function levelOne() {
         if (keyLevelOne.className == "hide") {
             lockLevelOne.className = "hide";
             console.log("Lock opened");
-            clickable = true;
+            clickableOne = true;
         }
     }
 
     function clickScreen() {
-        if (clickable == true) {
+        if (clickableOne == true) {
             levelTwo();
             console.log("Starting Level Two");
         }
@@ -137,17 +137,17 @@ function levelThree() {
     startScreen.innerHTML = "";
 }
 
-// function finish() {
+/*function finish() {
 
 
-//     currentLevel = 1;
-//     save();
-//     console.log(theCurrentLevel + currentLevel);
-//     levelSelectOne.className = "levelOptions";
-//     levelSelectTwo.className = "levelOptions";
-//     levelSelectThree.className = "levelOptions";
-// }
-
+    currentLevel = 1;
+    save();
+    console.log(theCurrentLevel + currentLevel);
+    levelSelectOne.className = "levelOptions";
+    levelSelectTwo.className = "levelOptions";
+    levelSelectThree.className = "levelOptions";
+}
+*/
 
 function reset() {
     localStorage.levelNumber = 1;
