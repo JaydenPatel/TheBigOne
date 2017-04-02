@@ -10,7 +10,7 @@ html {
 body {
     height: 1vh;
     background: white;
-    background: radial-gradient(circle, #fff 5%, #a6a6a6);
+    background: radial-gradient(circle, #fff 1%, #a6a6a6);
     background-size: cover;
 }
 

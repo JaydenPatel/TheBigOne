@@ -15,7 +15,7 @@ $(document).on('buttonClick', function() {
 
 
 
-//Prevents image interactions
+//Prevents all image interactions
 $("img").mousedown(function() {
     return false;
 });

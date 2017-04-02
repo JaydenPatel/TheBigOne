@@ -151,7 +151,6 @@ function levelThree() {
 
 function reset() {
     localStorage.levelNumber = 1;
-    // window.open("index.html");
     console.log("Reset to " + localStorage.levelNumber);
     load();
     loadGame();
