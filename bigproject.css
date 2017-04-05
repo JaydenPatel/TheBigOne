@@ -1,4 +1,5 @@
-html {
+html,
+body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -220,4 +221,90 @@ img {
     padding: 170px 32.5px 170px 32.5px;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.kamikazebackground {
+    height: 550px;
+    width: 550px;
+    border-radius: 4px;
+}
+
+.locklevel2 {
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    left: 36%;
+    top: 39%;
+}
+
+.lock2level2 {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    left: 69%;
+    top: 54%;
+}
+
+.lock3level2 {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    left: 54%;
+    top: 20.5%;
+}
+
+.keylevel2 {
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    left: 39%;
+    top: 15%;
+}
+
+.key2level2 {
+    position: absolute;
+    width: 4%;
+    height: 6%;
+    left: 57%;
+    top: 25%;
+}
+
+.key3level2 {
+    position: absolute;
+    width: 3%;
+    height: 4%;
+    left: 4%;
+    top: 45%;
+}
+
+.bossLevelLock1 {
+    position: absolute;
+    left: 5.9em;
+    top: 10.5em;
+    width: 2em;
+    height: 3em;
+    z-index: 2;
+    transform: rotate(-9deg);
+}
+
+.bossLevelLock2 {
+    position: absolute;
+    right: 5.9em;
+    top: 10.5em;
+    width: 2em;
+    height: 3em;
+    z-index: 2;
+    transform: rotate(9deg);
+}
+
+.bossLevelLock3 {
+    position: absolute;
+    top: 10.5em;
+    width: 4em;
+    height: 4em;
+    z-index: 2;
+    top: 30%;
+    left: 48%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }

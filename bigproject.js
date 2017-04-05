@@ -1,10 +1,13 @@
+//Add information between each and every level to create a "story". 
+// Makes for a better game
+
 //JavaScript
 //Displays your current level in the console
 var theCurrentLevel = "The current level is: ";
 console.log("The current cache level is: " + localStorage.levelNumber);
 
 
-//Undefined Variable
+//Undefined Variables
 var playerX;
 var spawnPoint;
 var level;
@@ -59,12 +62,12 @@ function loadGame() {
         levelTwo();
     }
     else
-        prelevelOne();
+        levelOne();
 
 }
 
 function prelevelOne() {
-    startScreen.innerHTML = "<center><div id='prelevelOneDIV'>Can you escape Summit Shasta?<br><br>To play, find the keys to open the locks. Then click the door to go to the next level</div></center>";
+    startScreen.innerHTML = "<center><div id='prelevelOneDIV'>Can you escape?<br><br>To play, find the keys to open the locks. Then click the door to go to the next level</div></center>";
     var preloadDiv = document.getElementById("prelevelOneDIV");
     preloadDiv.addEventListener("click", function() {
         levelOne();
@@ -92,6 +95,7 @@ function levelOne() {
     function clickKey() {
         console.log("Key Obtained");
         keyLevelOne.className = "hide";
+
     }
 
     function clickLock() {
@@ -120,13 +124,81 @@ function levelTwo() {
     levelSelectOne.className = "levelOptions";
     levelSelectTwo.className = "levelOptions";
     startOptions.className = "hide";
-    startScreen.innerHTML = "";
+    startScreen.innerHTML = "<img class='locklevel2' id='locklevel2' src='./images/locklevel2.png' />";
+    startScreen.innerHTML += "<img class='lock2level2' id='lock2level2' src='./images/locklevel2.png' />";
+    startScreen.innerHTML += "<img class='lock3level2' id='lock3level2' src='./images/locklevel2.png' />";
+    startScreen.innerHTML += "<img class= 'keylevel2' id='keylevel2' src='./images/keylevel2.png' />";
+    startScreen.innerHTML += "<img class= 'key2level2' id='key2level2' src='./images/keylevel2.png' />";
+    startScreen.innerHTML += "<img class= 'key3level2' id='key3level2' src='./images/keylevel2.png' />";
+    startScreen.innerHTML += "<img class='kamikazebackground' id='kamikazebackground' src='./images/1680kamikaze.jpg' />";
+    var locklevel2 = document.getElementById("locklevel2");
+    var lock2level2 = document.getElementById("lock2level2");
+    var lock3level2 = document.getElementById("lock3level2");
+    var keylevel2 = document.getElementById("keylevel2");
+    var key2level2 = document.getElementById("key2level2");
+    var key3level2 = document.getElementById("key3level2");
+    var kamikazebackground = document.getElementById("kamikazebackground");
+    var nextlevel = false;
+    var clicks = 0;
+    keylevel2.addEventListener("click", clickkey1);
+    key2level2.addEventListener("click", clickkey2);
+    key3level2.addEventListener("click", clickkey3);
+    locklevel2.addEventListener("click", clicklock1);
+    lock2level2.addEventListener("click", clicklock2);
+    lock3level2.addEventListener("click", clicklock3);
+    kamikazebackground.addEventListener("click", finishedlevel2);
+
+    function clickkey1() {
+        console.log("Key Obtained");
+        keylevel2.className = "hide";
+    }
+
+    function clickkey2() {
+        console.log("Key Obtained");
+        key2level2.className = "hide";
+    }
+
+    function clickkey3() {
+        console.log("Key Obtained");
+        key3level2.className = "hide";
+    }
+
+    function clicklock2() {
+        if (key2level2.className == "hide") {
+            lock2level2.className = "hide";
+            console.log("Lock opened");
+        }
+    }
+
+    function clicklock3() {
+        if (key3level2.className == "hide") {
+            lock3level2.className = "hide";
+            console.log("Lock opened");
+        }
+    }
+
+    function clicklock1() {
+        if (keylevel2.className == "hide" && key2level2.className == "hide" && key3level2.className == "hide") {
+            clicks += 1;
+        }
+        if (clicks == 5 && keylevel2.className == "hide" && key2level2.className == "hide" && key3level2.className == "hide") {
+            locklevel2.className = "hide";
+            console.log("Hatch Open");
+            nextlevel = true;
+            console.log(clicks);
+        }
+    }
+
+    function finishedlevel2() {
+        if (nextlevel == true) {
+            levelThree();
+            console.log("Starting Level 3");
+        }
+    }
+
 }
 
 function levelThree() {
-
-
-
     currentLevel = 3;
     save();
     console.log(theCurrentLevel + currentLevel);
@@ -135,19 +207,23 @@ function levelThree() {
     levelSelectThree.className = "levelOptions";
     startOptions.className = "hide";
     startScreen.innerHTML = "";
+
 }
 
-/*function finish() {
-
-
-    currentLevel = 1;
+function bossLevel() {
+    currentLevel = 3;
     save();
     console.log(theCurrentLevel + currentLevel);
     levelSelectOne.className = "levelOptions";
     levelSelectTwo.className = "levelOptions";
     levelSelectThree.className = "levelOptions";
+    startScreen.innerHTML = "<img class='bossLevelLock1' src='./images/bossLevelLock1.png' />";
+    startScreen.innerHTML += "<img class='bossLevelLock2' src='./images/bossLevelLock2.png' />";
+    startScreen.innerHTML += "<img class='bossLevelLock3' src='./images/bossLevelLock3.png' />";
+    startScreen.innerHTML += "<img src = './images/bossLevelD.png' style='width: 550px; height: 550px;'/>";
+
+
 }
-*/
 
 function reset() {
     localStorage.levelNumber = 1;

@@ -20,7 +20,7 @@ $("img").mousedown(function() {
     return false;
 });
 
-
+/*
 // Splash animation
 $(document).ready(function() {
     $('#splash').css('opacity', '1'); 
@@ -28,3 +28,4 @@ $(document).ready(function() {
         $("#splash").fadeOut(3000);
     });
 });
+*/
