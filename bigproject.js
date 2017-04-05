@@ -8,8 +8,6 @@ console.log("The current cache level is: " + localStorage.levelNumber);
 
 
 //Undefined Variables
-var playerX;
-var spawnPoint;
 var level;
 var currentLevel;
 var startLevel;
@@ -211,7 +209,7 @@ function levelThree() {
 }
 
 function bossLevel() {
-    currentLevel = 3;
+    currentLevel= 3;
     save();
     console.log(theCurrentLevel + currentLevel);
     levelSelectOne.className = "levelOptions";
@@ -221,7 +219,25 @@ function bossLevel() {
     startScreen.innerHTML += "<img class='bossLevelLock2' src='./images/bossLevelLock2.png' />";
     startScreen.innerHTML += "<img class='bossLevelLock3' src='./images/bossLevelLock3.png' />";
     startScreen.innerHTML += "<img src = './images/bossLevelD.png' style='width: 550px; height: 550px;'/>";
+    var lock1Key1got = false;
+    var lock1Key2got = false;
+    var lock1Key3got = false;
+    var lock2Key1got = false;
+    var lock2Key2got = false;
+    var lock2Key3got = false;
 
+    function unlockLock1() {
+        if (lock1Key1got == true && lock1Key2got == true && lock1Key3got == true) {
+            //hidden things
+        }
+    }
+    
+
+    function unlockLock2() {
+        if (lock2Key1got == true && lock2Key2got == true && lock2Key3got == true) {
+            //hidden things
+        }
+    }
 
 }
 
@@ -233,7 +249,7 @@ function reset() {
 }
 
 function selectLevelOne() {
-    levelOne();
+    bossLevel();
 }
 
 function selectLevelTwo() {
